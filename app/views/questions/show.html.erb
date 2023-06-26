@@ -1,13 +1,17 @@
-<h1> Шаблон show.html.erb  </h1>
-<h1> Вопрос </h1>
-<p><%= @question.body %></p>
-<p> user_id: <b><%= @question.user_id %></b></p>
+<div class="container">
 
-<p><%= link_to "Изменить вопрос", edit_question_path(@question) %></p>
+  <h1> Шаблон show.html.erb  </h1>
+  <h1 class="title-lg mb"> Вопрос </h1>
+  <p class="mt-sm"><%= @question.body %></p>
+  <p> user_id: <b><%= @question.user_id %></b></p>
 
-<%# кнопки в <p> заворачивать нельзя, делаем div %>
-<div>
-  <%= button_to "Удалить вопрос", question_path(@question), method: :delete %>
+  <p class="mt"><%= link_to "Изменить вопрос", edit_question_path(@question), class:'button button-main' %></p>
+
+  <%# кнопки в <p> заворачивать нельзя, делаем div %>
+  <p class="mt">
+    <%= button_to "Удалить вопрос", question_path(@question), method: :delete, class:'button button-main' %>
+  </p>
+
+  <p class="mt"><%= link_to "Все вопросы", questions_path %></p>
+
 </div>
-
-<p><%= link_to "Все вопросы", questions_path %></p>

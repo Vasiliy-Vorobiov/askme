@@ -1,0 +1,20 @@
+/*
+* Имя layout выбрано произвольно. Никаго отношения к соглашениям оно не имеет
+*/
+
+body {
+  background: #220d06;
+  justify-content: center;
+  display: flex;
+}
+
+.wrapper {
+  max-height: 800px;
+  margin: 40px;
+  width: 100%;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+}
