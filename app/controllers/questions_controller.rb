@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   # Теперь поиск вопроса в БД можно удалить из этих действий
-  before_action :set_question, only: %i[edit update show destory]
+  before_action :set_question, only: %i[edit update show destroy]
 
   # нужна для отключения токенов при работе через команду CURL
   # для работы с формами в браузере токены нужны
