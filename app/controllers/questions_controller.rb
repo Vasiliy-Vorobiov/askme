@@ -14,7 +14,9 @@ class QuestionsController < ApplicationController
     # require - требует чтобы у хэша params был конкретный ключ
     # permit - отсавляет в том объекте, у кторого он был вызван только заданные значения ключей
     question = Question.create(question_params)
-    redirect_to question_path(question)
+    
+    # flash[:notice] = 'Ваш вопрос создан' - первый спопсоб передечи сообщения
+    redirect_to question_path(question), notice: 'Ваш вопрос создан'
     # redirect_to '/' # корневой адрес на сайте
     # render text: 'ваш запрос обработан'
   end
@@ -29,14 +31,14 @@ class QuestionsController < ApplicationController
     # Заменяем на:
     @question.update(question_params)
 
-    redirect_to question_path(@question)
+    redirect_to question_path(@question), notice: 'Вопрос сохранен'
   end
 
   def destroy
     # @question = Question.find(params[:id])
     @question.destroy
 
-    redirect_to questions_path
+    redirect_to questions_path, notice: 'Вопрос удален'
   end
 
   def show
