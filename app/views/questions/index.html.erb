@@ -1,13 +1,32 @@
 <div class="container">
 
-  <h2 class="title-lg mb"> Вопросы </h2>
-
   <div class="mb">
     <%= link_to "Создать новый вопрос", new_question_path, class: 'button button-main' %>
   </div>
 
+
+   <div class="mt">
+    <%= render 'form', question: @question %>
+  </div>
+
+  <div class="container mt-sm">
+    <h2 class="title-lg"> Все вопросы </h2>
+  </div>
+
+  <%# вместо всего этого делаем вызов паршала%>
+  <%# @questions.each do |item| %>
+    <%#p class="mb-sm"%>
+      <%#= link_to "Вопрос #{item.user_id}", question_path(item.id) %>
+    <%#/p>
+  <%# end %>
+
   <% @questions.each do |item| %>
-    <p class="mb-sm"><%= link_to "Вопрос #{item.user_id}", question_path(item.id) %></p>
+    <div class="mt-sm container"%>
+      <%= render 'question', question: item %>
+    </div>
   <% end %>
+
+  <%#короткая запись без each%>
+  <%#= render @questions %>
 
 </div>

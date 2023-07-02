@@ -48,6 +48,7 @@ class QuestionsController < ApplicationController
     # @questions = Question.all.sort_by(&:user_id)
     # в этом случае сортировка будет средставми SQL 'user_id DESC' - По убыванию. По умолчанию ASC
     @questions = Question.all.order('user_id')
+    @question = Question.new
   end
 
   def new

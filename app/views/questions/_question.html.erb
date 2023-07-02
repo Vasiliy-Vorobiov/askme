@@ -1,0 +1,18 @@
+
+<p> user id: <b><%= question.user_id %></b></p>
+
+<div class="mb-sm">
+  <%= question.body %>
+</div>
+
+<div class="text-sm question-footer">
+  <div class="text-grey">
+    <%= l(question.created_at, format: :short) %>
+  </div>
+  
+  <div>
+    <%# кнопки в <p> заворачивать нельзя, делаем div %>
+    <%= link_to "Изменить вопрос", edit_question_path(question), class:'button button-main' %>
+    <%= button_to "Удалить вопрос", question_path(question), method: :delete, class:'button button-main' %>
+  </div>
+</div>
