@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # заменяем всё на одну строчку, что то же самое
   resources :questions
+  resources :users, only: %i[new create]
+  # Defines the root path route ("/")
+  # root "articles#index"
 end
