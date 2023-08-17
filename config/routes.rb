@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   # заменяем всё на одну строчку, что то же самое
   resources :questions
- 
+
   # здесь всё в единственном числе, т.к пользователю недоступна работа с коллекцией сессии
   resource :session, only: %i[new create destroy]
-  
-  resources :users, only: %i[new create]
+
+  resources :users, only: %i[new create edit update destroy]
   # Defines the root path route ("/")
   # root "articles#index"
 end
